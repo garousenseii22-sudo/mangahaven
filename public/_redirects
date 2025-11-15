@@ -1,0 +1,9 @@
+# Allow direct access to sitemap and other static SEO files
+/sitemap.xml                       /sitemap.xml                       200
+/robots.txt                        /robots.txt                        200
+/googlebf3959ed17d2ffff.html       /googlebf3959ed17d2ffff.html       200
+
+# SPA fallback
+/*                                 /index.html                        200
+
+

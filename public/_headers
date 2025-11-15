@@ -1,0 +1,39 @@
+/*
+  # 🧱 General Security + Defaults
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
+  Content-Security-Policy: default-src 'self' data: blob: https:; img-src * data: blob: https:; media-src * data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:;
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# 🖼️ Image Assets (manga pages, covers, thumbnails)
+# Cached longer (24h) to make reading faster
+/*.jpg
+  Cache-Control: public, max-age=86400, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=86400, immutable
+
+/*.png
+  Cache-Control: public, max-age=86400, immutable
+
+/*.webp
+  Cache-Control: public, max-age=86400, immutable
+
+# ⚙️ API proxy responses (keep semi-fresh)
+# You can adjust max-age to 3600s (1h) if you want quicker updates
+/api/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# 🧩 JavaScript / CSS / static chunks
+# These rarely change once deployed, so we can cache aggressively
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable

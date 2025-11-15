@@ -1,0 +1,34 @@
+/* src/styles.css or similar file */
+.manga-viewer {
+  padding: 20px;
+}
+
+.manga-details {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chapter {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chapter-images {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 600px;  /* Adjust as needed */
+}
+
+.chapter-images img {
+  width: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
